@@ -46,10 +46,10 @@ class SxGeo {
 	public $batch_mode  = false;
 	public $memory_mode = false;
 
-	public function __construct($db_file = null, $type = SXGEO_FILE){
+	public function __construct($db_file = null, $type = self::SXGEO_FILE){
 		
 		if ($db_file === null){
-			$this->fh = fopen(__DIR__ . DIRECTORY_SEPARATOR . 'SxGeoCity.dat');
+			$this->fh = fopen(__DIR__ . DIRECTORY_SEPARATOR . 'SxGeoCity.dat', 'rb');
 		}else{
 			$this->fh = fopen($db_file, 'rb');
 		}
@@ -69,8 +69,8 @@ class SxGeo {
 		$this->max_city    = $info['max_city'];
 		$this->max_country = $info['max_country'];
 		$this->country_size= $info['country_size'];
-		$this->batch_mode  = $type & SXGEO_BATCH;
-		$this->memory_mode = $type & SXGEO_MEMORY;
+		$this->batch_mode  = $type & self::SXGEO_BATCH;
+		$this->memory_mode = $type & self::SXGEO_MEMORY;
 		$this->pack        = $info['pack_size'] ? explode("\0", fread($this->fh, $info['pack_size'])) : '';
 		$this->b_idx_str   = fread($this->fh, $info['b_idx_len'] * 4);
 		$this->m_idx_str   = fread($this->fh, $info['m_idx_len'] * 4);
