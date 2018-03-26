@@ -35,6 +35,7 @@ Put "extra" settings to composer.json
 ```json
 "extra": {
     "sypexgeo_remote": "https://sypexgeo.net/files/SxGeoCity_utf8.zip",
-    "sypexgeo_local": "/path/to/project/SxGeoCity.dat"
+    "sypexgeo_local": "/path/to/project/SxGeoCity.dat",
+	"sypexgeo_basename": "SxGeoCity.dat"
 }
 ```
