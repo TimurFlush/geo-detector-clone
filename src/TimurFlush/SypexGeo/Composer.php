@@ -1,6 +1,6 @@
 <?php
 
-namespace IgI\SypexGeo;
+namespace TimurFlush\SypexGeo;
 
 use Composer\Script\Event;
 
@@ -76,8 +76,12 @@ class Composer
             $event->getIO()->write(sprintf("<error>Extraction failed: error code %s</error>", $zipResult));
         }
 
-        $defaultFileName = $zip->getNameIndex(0);
-
+		$defaultFileName = $zip->getNameIndex(0);
+		if (isset($extra['sypexgeo_basename'])){
+			$event->getIO()->write("<info>End file renamed to '".$extra['sypexgeo_basename']."'.</info>");
+			$defaultFileName = $extra['sypexgeo_basename'];
+		}
+		
         /* Extract Zip File */
         $zip->extractTo($extractPath);
         $zip->close();

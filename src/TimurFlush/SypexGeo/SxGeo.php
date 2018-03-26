@@ -1,22 +1,13 @@
 <?php
 
-namespace IgI\SypexGeo;
+namespace TimurFlush\SypexGeo;
 
-/***************************************************************************\
-| Sypex Geo                  version 2.2.3                                  |
-| (c)2006-2014 zapimir       zapimir@zapimir.net       http://sypex.net/    |
-| (c)2006-2014 BINOVATOR     info@sypex.net                                 |
-|---------------------------------------------------------------------------|
-|     created: 2006.10.17 18:33              modified: 2014.06.20 18:57     |
-|---------------------------------------------------------------------------|
-| Sypex Geo is released under the terms of the BSD license                  |
-|   http://sypex.net/bsd_license.txt                                        |
-\***************************************************************************/
-
-define ('SXGEO_FILE', 0);
-define ('SXGEO_MEMORY', 1);
-define ('SXGEO_BATCH',  2);
 class SxGeo {
+	
+	const SXGEO_FILE = 0;
+	const SXGEO_MEMORY = 1;
+	const SXGEO_BATCH = 2;
+	
 	protected $fh;
 	protected $ip1c;
 	protected $info;
@@ -55,8 +46,14 @@ class SxGeo {
 	public $batch_mode  = false;
 	public $memory_mode = false;
 
-	public function __construct($db_file = 'SxGeo.dat', $type = SXGEO_FILE){
-		$this->fh = fopen($db_file, 'rb');
+	public function __construct($db_file = null, $type = SXGEO_FILE){
+		
+		if ($db_file === null){
+			$this->fh = fopen(__DIR__ . DIRECTORY_SEPARATOR . 'SxGeoCity.dat');
+		}else{
+			$this->fh = fopen($db_file, 'rb');
+		}
+		
 		// Сначала убеждаемся, что есть файл базы данных
 		$header = fread($this->fh, 40); // В версии 2.2 заголовок увеличился на 8 байт
 		if(substr($header, 0, 3) != 'SxG') die("Can't open {$db_file}\n");

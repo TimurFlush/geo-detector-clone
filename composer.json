@@ -1,5 +1,5 @@
 {
-    "name": "igi/sypexgeo",
+    "name": "timur-flush/sypexgeo",
     "type": "library",
     "description": "PHP library Sypex Geo API (http://sypexgeo.net)",
     "keywords": ["sxgeo", "sypex", "geoip"],
@@ -10,6 +10,7 @@
         "homepage": "https://github.com/iginikolaev"
     }],
     "require": {
+		"ext-zip": "*",
         "php": ">=5.3.0"
     },
     "autoload": {
