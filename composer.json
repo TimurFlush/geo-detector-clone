@@ -10,6 +10,7 @@
     }],
     "require": {
 		"ext-zip": "*",
+        "ext-curl": "*",
         "php": ">=5.3.0"
     },
     "autoload": {
