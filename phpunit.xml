@@ -1,0 +1,7 @@
+<phpunit>
+    <testsuites>
+        <testsuite name="timur-flush-geo-detector">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
