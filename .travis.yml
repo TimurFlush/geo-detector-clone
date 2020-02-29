@@ -18,14 +18,6 @@ cache:
     - $HOME/.ccache
     - $HOME/.composer/cache
 
-addons:
-  apt:
-    sources:
-      - george-edison55-precise-backports
-    packages:
-      - cmake-data
-      - cmake
-
 before_install:
   - export PHP_MAJOR="$(echo $TRAVIS_PHP_VERSION | cut -d '.' -f 1,2)"
   - export PHP_MINOR="$(`phpenv which php` -r 'echo phpversion();' | cut -d '.' -f 2)"
@@ -33,6 +25,7 @@ before_install:
   - composer self-update
   - travis_retry composer install --prefer-dist --no-interaction --ignore-platform-reqs
   - sudo apt-get update -y
+  - bash tests/_ci/install_cmake3.sh
   - bash tests/_ci/install_libzip.sh
 
 install:
