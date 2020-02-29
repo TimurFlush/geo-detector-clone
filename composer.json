@@ -13,9 +13,7 @@
         "ext-curl": "*",
         "ext-psr": "*",
         "ext-json": "*",
-        "league/iso3166": "^2",
         "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^5.0",
-        "doctrine/annotations": "^1.8",
         "netresearch/jsonmapper": "^1.6"
     },
     "require-dev": {
