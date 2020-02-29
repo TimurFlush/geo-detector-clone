@@ -24,13 +24,9 @@ before_install:
   - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - composer self-update
   - travis_retry composer install --prefer-dist --no-interaction --ignore-platform-reqs
-  - sudo apt-get update -y
-  - bash tests/_ci/install_cmake3.sh
   - bash tests/_ci/install_libzip.sh
 
 install:
-  - echo "extension=curl" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - echo "extension=json" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - pecl install psr
   - pecl install zip
 
