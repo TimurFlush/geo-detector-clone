@@ -208,7 +208,7 @@ final class GeoData extends EntityAbstract
     public static function createFromJson(string $json): GeoData
     {
         try {
-            $json = json_decode($json,false, 512, JSON_THROW_ON_ERROR);
+            $json = json_decode($json, false, 512, JSON_THROW_ON_ERROR);
         } catch (JsonException $jsonException) {
             throw new Exception('Unable to parse json. Message: ' . $jsonException->getMessage());
         }
