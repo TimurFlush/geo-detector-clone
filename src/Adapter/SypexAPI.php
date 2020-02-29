@@ -32,7 +32,7 @@ class SypexAPI implements AdapterInterface
     /**
      * @var string
      */
-    protected string $server;
+    protected ?string $server = null;
 
     /**
      * @var string|null

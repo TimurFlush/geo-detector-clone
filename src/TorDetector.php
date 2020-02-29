@@ -22,7 +22,7 @@ final class TorDetector
     /**
      * @var string|null
      */
-    protected static ?string $serverAddress;
+    protected static ?string $serverAddress = null;
 
     /**
      * @param string $serverAddress
