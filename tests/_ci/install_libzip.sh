@@ -17,5 +17,6 @@ mkdir $HOME/libzip && cd $HOME/libzip
 git clone https://github.com/nih-at/libzip.git && cd libzip
 mkdir build && cd build
 
-cmake ..
-make && make test && make install
+sudo cmake ..
+sudo make
+sudo make install
