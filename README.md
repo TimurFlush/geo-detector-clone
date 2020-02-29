@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/TimurFlush/geo-detector.svg?branch=master)](https://travis-ci.org/TimurFlush/geo-detector)
+[![Coverage Status](https://coveralls.io/repos/github/TimurFlush/geo-detector/badge.svg?branch=master)](https://coveralls.io/github/TimurFlush/geo-detector?branch=master)
+
+
 # GeoDetector
 This library allows to receive geodata of any IP address. 
 

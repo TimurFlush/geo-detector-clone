@@ -23,6 +23,6 @@ class Version
      */
     public static function get()
     {
-        return '2.0.0-RC1';
+        return '2.0.0';
     }
 }
