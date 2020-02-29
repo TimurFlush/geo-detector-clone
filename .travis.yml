@@ -26,10 +26,10 @@ before_install:
   - travis_retry composer install --prefer-dist --no-interaction --ignore-platform-reqs
 
 install:
-  - echo "extension=zip" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo "extension=curl" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo "extension=json" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - pecl install psr
+  - pecl install zip
 
 script:
   - vendor/bin/phpcs --extensions=php
