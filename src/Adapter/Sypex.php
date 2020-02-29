@@ -72,8 +72,8 @@ class Sypex implements AdapterInterface
         'ZM', 'ME', 'ZW', 'A1', 'XK', 'O1', 'AX', 'GG', 'IM', 'JE', 'BL', 'MF', 'BQ', 'SS'
     ];
 
-    public $batch_mode  = false;
-    public $memory_mode = false;
+    public bool $batch_mode  = false;
+    public bool $memory_mode = false;
 
     /**
      * SxGeo constructor.

@@ -27,22 +27,22 @@ final class GeoData extends EntityAbstract
     /**
      * @var Country
      */
-    protected $country;
+    protected Country $country;
 
     /**
      * @var Region
      */
-    protected $region;
+    protected Region $region;
 
     /**
      * @var City
      */
-    protected $city;
+    protected City $city;
 
     /**
      * @var bool|null
      */
-    protected $torStatus = null;
+    protected ?bool $torStatus = null;
 
     /**
      * GeoData constructor.

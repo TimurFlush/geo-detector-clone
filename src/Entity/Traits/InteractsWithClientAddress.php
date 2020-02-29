@@ -16,10 +16,9 @@ namespace TimurFlush\GeoDetector\Entity\Traits;
 trait InteractsWithClientAddress
 {
     /**
-     * @JsonableProperty
      * @var string|null
      */
-    protected $clientAddress = null;
+    protected ?string $clientAddress = null;
 
     /**
      * @param string $clientAddress

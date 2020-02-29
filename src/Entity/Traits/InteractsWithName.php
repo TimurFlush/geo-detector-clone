@@ -18,12 +18,12 @@ trait InteractsWithName
     /**
      * @var string|null
      */
-    protected $name = null;
+    protected ?string $name = null;
 
     /**
      * @var string|null
      */
-    protected $iso = null;
+    protected ?string $iso = null;
 
     /**
      * @param string $name

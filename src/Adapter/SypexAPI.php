@@ -27,17 +27,17 @@ class SypexAPI implements AdapterInterface
     /**
      * @var string
      */
-    protected $defaultServer = 'api.sypexgeo.net';
+    protected string $defaultServer = 'api.sypexgeo.net';
 
     /**
      * @var string
      */
-    protected $server;
+    protected string $server;
 
     /**
      * @var string|null
      */
-    protected $licenseKey = null;
+    protected ?string $licenseKey = null;
 
     /**
      * SypexAPI constructor.

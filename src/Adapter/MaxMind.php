@@ -28,7 +28,7 @@ class MaxMind implements AdapterInterface
     /**
      * @var Reader
      */
-    protected $reader;
+    protected Reader $reader;
 
     /**
      * MaxMind constructor.

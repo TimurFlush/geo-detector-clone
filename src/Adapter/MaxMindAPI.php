@@ -29,7 +29,7 @@ class MaxMindAPI implements AdapterInterface
     /**
      * @var ProviderInterface
      */
-    protected $reader;
+    protected ProviderInterface $reader;
 
     /**
      * MaxMind constructor.

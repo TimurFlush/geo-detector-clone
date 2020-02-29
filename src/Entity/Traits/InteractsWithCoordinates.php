@@ -16,16 +16,14 @@ namespace TimurFlush\GeoDetector\Entity\Traits;
 trait InteractsWithCoordinates
 {
     /**
-     * @JsonableProperty
      * @var string|null
      */
-    protected $latitude = null;
+    protected ?string $latitude = null;
 
     /**
-     * @JsonableProperty
      * @var string|null
      */
-    protected $longitude = null;
+    protected ?string $longitude = null;
 
     /**
      * @param string $latitude

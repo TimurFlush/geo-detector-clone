@@ -18,7 +18,7 @@ trait InteractsWithTimeZone
     /**
      * @var string|null
      */
-    protected $timeZone = null;
+    protected ?string $timeZone = null;
 
     /**
      * @param string $name
