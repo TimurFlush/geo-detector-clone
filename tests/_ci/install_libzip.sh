@@ -15,6 +15,7 @@ set -o errexit
 mkdir $HOME/libzip && cd $HOME/libzip
 
 git clone https://github.com/nih-at/libzip.git && cd libzip
+git checkout tags/rel-1-6-1
 mkdir build && cd build
 
 sudo cmake ..
