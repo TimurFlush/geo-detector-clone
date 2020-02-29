@@ -24,6 +24,7 @@ before_install:
   - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - composer self-update
   - travis_retry composer install --prefer-dist --no-interaction --ignore-platform-reqs
+  - sudo apt-get install -y cmake3
   - bash tests/_ci/install_libzip.sh
 
 install:
