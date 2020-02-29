@@ -3,3 +3,4 @@ vendor
 composer.phar
 composer.lock
 tests/report
+.DS_Store
