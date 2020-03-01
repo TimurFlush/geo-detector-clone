@@ -57,8 +57,6 @@ class RetrievingGeoDataTest extends TestCase
             '127.0.0.3'    => false,
             '51.102.95.13' => false,
             $this->getRandomTorIP() => true,
-            $this->getRandomTorIP() => true,
-            $this->getRandomTorIP() => true,
         ];
 
         foreach ($ipList as $ip => $torStatus) {
