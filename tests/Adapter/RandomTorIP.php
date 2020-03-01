@@ -24,7 +24,7 @@ trait RandomTorIP
 
             $addresses[$index] = explode(' ', $address)[1];
 
-            if (sizeof($addresses) === 10) {
+            if (sizeof($addresses) === 2) {
                 break;
             }
         }
