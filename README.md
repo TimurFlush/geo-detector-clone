@@ -75,10 +75,103 @@ Please note that:
 1. A server by default is `api.sypexgeo.net`
 2. Without a license you can get only 10k request per month.
 
+#### MaxMind
+Usage:
+```php
+use TimurFlush\GeoDetector\Adapter\MaxMind;
+
+$adapter = new MaxMind('path/to/database.mmdb');
+```
+
+#### MaxMind (API)
+Usage:
+```php
+use TimurFlush\GeoDetector\Adapter\MaxMindAPI;
+
+$accountId = 0;
+$licenseKey = 'your-license-key';
+
+$adapter = new MaxMindAPI($accountId, $licenseKey);
+```
+
+## Providing a geo data information
+ProvideAll()
+```php
+use TimurFlush\GeoDetector\Entity\GeoData;
+use TimurFlush\GeoDetector\Entity\Country;
+use TimurFlush\GeoDetector\Entity\Region;
+use TimurFlush\GeoDetector\Entity\City;
+
+/**
+ * Provides all geo data information
+ * @var GeoData $geoData 
+ */
+$geoData = $adapter->provideAll('8.8.8.8');
+
+$geoData->getClientAddress(); // 8.8.8.8
+
+/**
+ * @var Country $country 
+ */
+$country = $geoData->getCountry();
+$country->getName(); // returns: United States of America
+$country->getIso(); //  returns: US
+$country->getLatitude(); // returns a latitude if it's exist
+$country->getLongitude(); // returns a longitude if it's exist
+$country->getTimeZone(); // returns a timezone if it's exist
+
+/**
+ * @var Region $region
+ */
+$region  = $geoData->getRegion();
+$region->getName(); // returns a region name if it's exist
+$region->getIso(); //  returns a region code if it's exist 
+$region->getLatitude(); // returns a latitude if it's exist
+$region->getLongitude(); // returns a longitude if it's exist
+$region->getTimeZone(); // returns a timezone if it's exist
+
+/**
+ * @var City $city
+ */
+$city    = $geoData->getCity();
+$city->getName(); // returns a region name if it's exist
+$city->getIso(); //  returns a region code if it's exist 
+$city->getLatitude(); // returns a latitude if it's exist
+$city->getLongitude(); // returns a longitude if it's exist
+$city->getTimeZone(); // returns a timezone if it's exist
+
+$geoData->getTimeZone(); // get timezone in order city, region, country
+$geoData->getLatitude(); // get latitude in order from city, region, country
+$geoData->getLongitude(); // get longitude in order from city, region, country
+$geoData->getTorStatis(); // determine if the address is an output node in the Tor network
+
+$geoData->toJson(); // convert object to json
+GeoData::createFromJson('{...}'); // create from json
+```
+---
+ProvideCountry()
+```php
+/*
+ * The behavior is identical to the provideCountry() method.
+ * The difference is that it will return an array of country names.
+ */
+$adapter->provideCountriesBatch(['1.1.1.1', '8.8.8.8']); // ['AU', 'US']
+```
+---
+ProvideAllBatch(array $array)
+```php
+/*
+ * The behavior is identical to the provideAll() method.
+ * The difference is that it will return an array of GeoData objects.
+ */
+$adapter->provideAllBatch(['1.1.1.1', '8.8.8.8']); // GeoData[]
+```
+
+
 ## Author
 Name: Timur F.
 
 Email: flush02@tutanota.com
 
 ## License
-MIT
+BSD 3-Clause
