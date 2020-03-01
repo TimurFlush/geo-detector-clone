@@ -133,7 +133,7 @@ class Sypex implements AdapterInterface
             unset($this->m_idx_str);
         }
 
-        if ($this->memory_mode && !$this->db) {
+        if ($this->memory_mode) {
             $this->db  = fread($this->fh, $this->db_items * $this->block_len);
             $this->regions_db = $info['region_size'] > 0 ? fread($this->fh, $info['region_size']) : '';
             $this->cities_db  = $info['city_size'] > 0 ? fread($this->fh, $info['city_size']) : '';
