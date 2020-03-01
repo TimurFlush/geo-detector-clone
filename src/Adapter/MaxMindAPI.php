@@ -74,12 +74,6 @@ class MaxMindAPI implements AdapterInterface
             )
             ->setTimeZone($all->location->timeZone);
 
-        $map = [
-            'country' => $country,
-            'region' => $region,
-            'city' => $city
-        ];
-
         return new GeoData($clientAddress, [
             'country' => $country,
             'region' => $region,
